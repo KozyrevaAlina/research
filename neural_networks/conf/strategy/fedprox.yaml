@@ -1,0 +1,11 @@
+---
+_target_: flwr.server.strategy.FedProx
+fraction_fit: 0.00001 # because we want the number of clients to sample on each round to be solely defined by min_fit_clients
+fraction_evaluate: 0.00001
+min_fit_clients: ${num_clients_per_round_fit}
+min_evaluate_clients: ${num_clients_per_round_eval}
+min_available_clients: ${num_clients}
+evaluate_metrics_aggregation_fn:
+  _target_: fedprox.strategy.weighted_average
+  _partial_: true # we dont' want this function to be evaluated when instantiating the strategy, we treat it as a partial and evaluate it when the strategy actually calls the function (in aggregate_evaluate())
+proximal_mu: 1.0 #${mu}
