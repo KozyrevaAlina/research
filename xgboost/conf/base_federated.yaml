@@ -1,0 +1,32 @@
+
+## data generation
+classification_type: 'group' # binary, group, individual
+mode_data: 'STRATIFIED' # 'STRATIFIED', 'SINGLE_ATTACK', 'EXCLUDE_SINGLE_ATTACK', 'HALF_BENIGN', 'RANDOM'
+normalization: 'Robust'
+feature_extractor: None 
+max_partitions_size: 250_000
+val_ratio: 0.2
+
+##
+centralised_eval: True
+num_rounds: 10
+num_clients: 8
+num_clients_per_round_fit: 8
+num_clients_per_round_eval: 1
+num_cpus_per_client: 0.5
+
+
+num_local_round: 1
+bst_params:
+  objective: 'multi:softmax' #"binary:logistic", # 'multi:softmax'  'multi:softprob'
+  num_class: 8
+  eta: 0.1 # Learning rate
+  max_depth: 8
+  eval_metric: 'auc'
+  nthread: 16
+  num_parallel_tree: 1
+  subsample: 1
+  tree_method: 'hist'
+
+defaults:
+  - strategy: fedxgbbagging # points to conf/strategy/fedavg.yaml

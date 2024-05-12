@@ -1,0 +1,12 @@
+---
+## data generation
+classification_type: 'group' # binary, group, individual
+mode_data: 'STRATIFIED' # 'STRATIFIED', 'SINGLE_ATTACK', 'EXCLUDE_SINGLE_ATTACK', 'HALF_BENIGN', 'RANDOM'
+type_normalization: 'Robust'
+type_feature_extractor: None 
+max_partitions_size: 250_000_000_000_000_000
+val_ratio: 0.2
+num_rounds: 10
+batch_size: 64
+num_classes: 8
+
