@@ -1,0 +1,3 @@
+---
+_target_: model.GRU
+num_classes: ${num_classes}
