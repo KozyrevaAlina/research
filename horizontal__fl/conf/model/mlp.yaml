@@ -1,3 +1,0 @@
----
-_target_: model.MLP
-num_classes: ${num_classes}
