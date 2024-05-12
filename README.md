@@ -10,16 +10,25 @@
 ## Используемый framework федеративного обучения:
 [flower.dev](https://flower.dev)
 
-## Dataset – исследование и предобработка данных
-- `data_explore.ipynb`
-- `preparation.py`
-- `preprocessing.py`
+## data_exploratin – исследование данных
+- `EDA_feature_importance.ipynb`
 
-## Federated_learning – архитектура федеративного обучения
-- `client.py`
-- `server.py`
-- `model.py`
-- `main.py`
+## xgboost – архитектура федеративного и централизованного обучения для модели xgboost
+- `centralized.py` - архитектура централизованного обучения
+- `federated.py` - архитектура федеративного обучения
+- `dataset.py` - предобработка данных
+- `client.py` - клиент федеративного обучения
+- `server.py` - сервер федеративного обучения
+- `utils.py` - вспомогательные функции
+- `monitor.py` - функции отслеживания задействования вычислительных ресурсов
+- `conf`: - задание конфигурации моделеи и процесса обучения
+  - `strategy`:
+    - `fedxgbbagging.yaml`   
+  - `base_centralized.yaml`
+  - `base_federated.yaml` 
+  
+
+## neural_networks – архитектура федеративного и централизованного обучения для нейронных моделей
 
 ## Experiments – результаты экспериментов
 - `Classic ML_8.ipynb`
